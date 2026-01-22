@@ -10,6 +10,12 @@
     "storage",
     "notifications"
   ],
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "109.0",
+      "data_collection_permissions": []
+    }
+  },
   "background": {
     "scripts": ["config.js", "tabManager.js", "background.js"]
   },
