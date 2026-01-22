@@ -10,12 +10,20 @@ function showStatus(message, type = "info", details = null) {
   statusDiv.className = `status ${type}`;
   statusDiv.style.display = "block";
 
-  let html = message;
-  if (details) {
-    html += `<div class="status-details">${details}</div>`;
-  }
+  // Clear existing content
+  statusDiv.textContent = "";
 
-  statusDiv.innerHTML = html;
+  // Add main message
+  const messageText = document.createTextNode(message);
+  statusDiv.appendChild(messageText);
+
+  // Add details if provided
+  if (details) {
+    const detailsDiv = document.createElement("div");
+    detailsDiv.className = "status-details";
+    detailsDiv.textContent = details;
+    statusDiv.appendChild(detailsDiv);
+  }
 
   if (type === "success") {
     setTimeout(() => {

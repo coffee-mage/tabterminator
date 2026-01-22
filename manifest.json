@@ -12,8 +12,9 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "strict_min_version": "109.0",
-      "data_collection_permissions": []
+      "id": "tabterminator@codesoldier.net",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {}
     }
   },
   "background": {
