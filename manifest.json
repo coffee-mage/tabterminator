@@ -2,9 +2,9 @@
   "manifest_version": 2,
   "name": "TabTerminator",
   "version": "0.0.1",
-  "description": "Browser tab management tool - merge windows, close specific domains, and sort by domain groups",
-  "author": "Your Name",
-  "homepage_url": "https://github.com/yourusername/tabterminator",
+  "description": "Browser tab management tool - merge windows, close and sort tabs",
+  "author": "Brad Dillon",
+  "homepage_url": "https://github.com/coffee-mage/tabterminator",
   "permissions": [
     "tabs",
     "storage",
@@ -35,13 +35,13 @@
   "commands": {
     "run-normal": {
       "suggested_key": {
-        "default": "Ctrl+Shift+C"
+        "default": "Alt+Shift+C"
       },
       "description": "Run TabTerminator in Clean mode"
     },
     "run-purge": {
       "suggested_key": {
-        "default": "Ctrl+Shift+P"
+        "default": "Alt+Shift+P"
       },
       "description": "Run TabTerminator in Purge mode"
     }
