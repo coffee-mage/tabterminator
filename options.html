@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TabTerminator Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <h1><img src="icons/tt-48.png" alt="TabTerminator" class="logo">TabTerminator Configuration</h1>
+
+  <div id="status" class="status"></div>
+
+  <div class="tab-navigation">
+    <button class="tab-btn active" data-tab="domain-groups">Domain Groups</button>
+    <button class="tab-btn" data-tab="close-settings">Mode Settings</button>
+  </div>
+
+  <div id="domain-groups-tab" class="tab-content active">
+    <div class="section">
+    <h2>
+      <span>Domain Groups</span>
+      <button class="add-group-btn" id="addGroupBtn">+ Add Group</button>
+    </h2>
+    <div class="description">
+      Define groups of related domains for sorting. Tabs will be sorted by: group → domain → title.
+      Domains not listed here will be grouped as "Other" and sorted last.
+      <br><strong>Tip:</strong> Use the ▲▼ buttons to reorder groups.
+    </div>
+
+    <div id="domainGroupsContainer"></div>
+    </div>
+  </div>
+
+  <div id="close-settings-tab" class="tab-content">
+    <div class="section">
+      <div class="description">
+        Both modes will collapse all Firefox windows into one and sort all tabs by domain group, then by domain name.
+      </div>
+
+      <h3 style="color: #555; margin-top: 30px; margin-bottom: 15px; font-size: 16px; font-weight: 600;">Clean Mode</h3>
+      <div class="close-settings-container">
+        <!-- Clean Mode Card -->
+        <div class="close-card">
+          <div class="close-card-header">
+            <span>Domains to Close</span>
+            <span class="domain-count" id="normalModeCount">0</span>
+          </div>
+          <div class="close-card-description">
+            Domains to close every time you run TabTerminator in clean mode
+          </div>
+          <div class="close-domains-list" id="normalModeList"></div>
+          <button class="add-close-domain-btn" id="addNormalDomainBtn">+ Add Domain</button>
+        </div>
+
+        <!-- Singular Domains Card -->
+        <div class="close-card singular">
+          <div class="close-card-header">
+            <span>Singular Domains</span>
+            <span class="domain-count" id="singularDomainsCount">0</span>
+          </div>
+          <div class="close-card-description">
+            Keep only the most recently active tab for these domains
+          </div>
+          <div class="close-domains-list" id="singularDomainsList"></div>
+          <button class="add-close-domain-btn" id="addSingularDomainBtn">+ Add Domain</button>
+        </div>
+      </div>
+
+      <h3 style="color: #555; margin-top: 30px; margin-bottom: 15px; font-size: 16px; font-weight: 600;">Purge Mode</h3>
+      <div class="description" style="margin-bottom: 15px; color: #666; font-style: italic;">
+        Purge mode will close clean mode domains and additional domain/groups below.
+      </div>
+      <div class="close-settings-container">
+        <!-- Purge Mode - Individual Domains Card -->
+        <div class="close-card purge">
+          <div class="close-card-header">
+            <span>Domains to Close</span>
+            <span class="domain-count" id="purgeModeCount">0</span>
+          </div>
+          <div class="close-card-description">
+            Additional domains to close when running in purge mode
+          </div>
+          <div class="close-domains-list" id="purgeModeList"></div>
+          <button class="add-close-domain-btn" id="addPurgeDomainBtn">+ Add Domain</button>
+        </div>
+
+        <!-- Purge Mode - Domain Groups Card -->
+        <div class="close-card purge-groups">
+          <div class="close-card-header">
+            <span>Domain Groups to Close</span>
+            <span class="domain-count" id="purgeGroupsCount">0</span>
+          </div>
+          <div class="close-card-description">
+            Select which domain groups to close when running in purge mode
+          </div>
+          <div class="close-domains-list" id="purgeGroupsList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button id="exportConfig">Export Config</button>
+    <button id="importConfig">Import Config</button>
+    <button id="reset">Reset to Defaults</button>
+    <button id="save">Save Configuration</button>
+  </div>
+
+  <input type="file" id="importFileInput" accept=".json">
+
+  <script src="options.js"></script>
+</body>
+</html>

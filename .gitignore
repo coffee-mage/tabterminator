@@ -1,0 +1,23 @@
+# Development files
+.claude/
+claude.md
+AMO_SUBMISSION.md
+
+# Build artifacts
+*.zip
+web-ext-artifacts/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+  "name": "TabTerminator",
+  "version": "0.0.1",
+  "description": "Browser tab management tool - merge windows, close specific domains, and sort by domain groups",
+  "author": "Your Name",
+  "homepage_url": "https://github.com/yourusername/tabterminator",
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications"
+  ],
+  "background": {
+    "scripts": ["config.js", "tabManager.js", "background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/tt-48.png",
+      "32": "icons/tt-48.png",
+      "48": "icons/tt-48.png",
+      "96": "icons/tt-96.png"
+    }
+  },
+  "icons": {
+    "48": "icons/tt-48.png",
+    "96": "icons/tt-96.png",
+    "128": "icons/tt-128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true,
+    "open_in_tab": true
+  },
+  "commands": {
+    "run-normal": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C"
+      },
+      "description": "Run TabTerminator in Clean mode"
+    },
+    "run-purge": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P"
+      },
+      "description": "Run TabTerminator in Purge mode"
+    }
+  }
+}
